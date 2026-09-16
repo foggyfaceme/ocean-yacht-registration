@@ -315,6 +315,16 @@ function homePage() {
         </div>
       </section>
 
+      <section class="section section-blueprint">
+        <div class="container">
+          <div class="availability-banner">
+            <div class="eyebrow">Always available</div>
+            <h2>Working 24/7 with yacht registration experience.</h2>
+            <p>Our team keeps your file moving across time zones, with a clear case officer and written requests whenever something is missing.</p>
+          </div>
+        </div>
+      </section>
+
       <section class="section" style="padding-top:0">
         <div class="container">
           <div class="section-header">
@@ -475,6 +485,34 @@ function servicesPage() {
               <p>${copy[item.id]}</p>
               <span class="link">Configure this service</span>
             </a>`).join("")}
+        </div>
+      </section>
+      <section class="section section-blueprint" style="padding-top:0">
+        <div class="container">
+          <div class="section-header">
+            <div class="eyebrow">Client reference</div>
+            <h2>Every change has a clear file.</h2>
+          </div>
+          <div class="service-detail-grid">
+            <article class="service-detail-block">
+              <div class="eyebrow">Registration renewal</div>
+              <h3>Keep your yacht papers current.</h3>
+              <p>Registration renewal is handled through a structured document review so the registry receives current yacht, owner and contact details.</p>
+              <p class="detail-note">No annual flag renewal on the standard private package.</p>
+            </article>
+            <article class="service-detail-block">
+              <div class="eyebrow">Ownership changes</div>
+              <h3>Transfer the existing Polish file.</h3>
+              <p>We prepare the ownership-change dossier after a sale, including the new owner or company details and the supporting proof of ownership.</p>
+              <p class="detail-note">Bring the bill of sale, builder's invoice or current registration in the seller's name.</p>
+            </article>
+            <article class="service-detail-block">
+              <div class="eyebrow">Modifications</div>
+              <h3>Amend the particulars on record.</h3>
+              <p>Use a modification file for a change to the yacht name, engine, dimensions or owner particulars already held on the Polish record.</p>
+              <p class="detail-note">The case officer confirms which supporting documents are needed before submission.</p>
+            </article>
+          </div>
         </div>
       </section>
     </main>`, "services");
@@ -680,6 +718,12 @@ function applicationShell(card, step) {
   const names = ["Package", "Applicant", "Yacht", "Documents", "Review"];
   return `
     <main class="form-shell">
+      <div class="container registration-intro">
+        <div class="eyebrow">Registration workflow</div>
+        <h1>Five clear steps to a complete yacht file.</h1>
+        <p>Move from package selection to review in one guided application. Your draft stays available in this browser as you work.</p>
+        <div class="registration-flow">${names.map((name, index) => `<div class="registration-flow-step ${step === index ? "active" : ""}"><span>${String(index + 1).padStart(2, "0")}</span><strong>${name}</strong></div>`).join("")}</div>
+      </div>
       <div class="container form-layout">
         <aside class="form-sidebar">
           ${brand()}
